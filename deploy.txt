@@ -1,0 +1,92 @@
+- Easy to deploy python application is called render.com
+- create account
+- from dashbord >> create a web service
+- allow render to pull code from github
+- Somewhere it requires a build command "pip install -r requirements.txt".
+======================================================
+
+The application we’re working with will be deployed on Render.com. While there are several other cloud platforms like Amazon Web Services, Heroku, Google Cloud, and Azure, Render is simple and beginner-friendly, which is why we’re using it for this demonstration.
+
+First, I committed and pushed my app.py file to GitHub with the message "Added Dynamic data and API route." This sends the code from my local development environment (e.g., Replit) to GitHub. Now, all the code is stored and versioned in GitHub, and I’m ready to deploy it to the cloud.
+
+To get started with Render:
+
+Create a Render Account: Sign up at render.com. It’s free to start with a basic plan.
+
+Access the Dashboard: After logging in, you'll be directed to the Render dashboard.
+
+Create a Web Service: Click on "New" and select "Web Service". A web service is used for dynamic applications — like those with API routes or database connections. (If you were deploying a static HTML site, you’d choose “Static Site” instead.)
+
+Connect Your GitHub Repository: Render will ask for access to your GitHub account. Grant access and select the repository you want to deploy (e.g., the Jovian Careers website repo).
+
+Configure the Deployment:
+
+Name: Give your web service a name like "Jovian Careers Website".
+
+Environment: Choose Python 3.
+
+Region: Set to your nearest available region (e.g., Oregon).
+
+Branch: Select the branch you want to deploy, typically main.
+
+Build Command: Set this to:
+
+
+pip install -r requirements.txt
+
+To make this build command work, you need to create a requirements.txt file in your project root that lists the libraries your application needs. For example:
+
+flask
+gunicorn
+
+
+Flask: Required for the web framework.
+
+Gunicorn: A production-grade WSGI server for running Python applications (since Flask's built-in server is not suitable for production).
+
+After creating requirements.txt, commit and push it to GitHub with a message like “Added requirements.txt”.
+
+Start Command: Set this to:
+
+gunicorn app:app
+
+This command runs your Flask app in production using Gunicorn. The format is gunicorn <filename-without-py>:<flask-variable-name>. If your main app file is app.py and the Flask app variable is named app, then this command is correct.
+
+Note: I found this setup by simply Googling "render.com deploy flask application." There's also official documentation and GitHub examples provided by Render that walk you through deploying a Hello World Flask app.
+
+Select a Plan: Choose the free plan to begin. A paid plan will build faster, but the free tier is sufficient for small projects.
+
+Render will now:
+
+Clone your GitHub repo.
+
+Install dependencies from requirements.txt.
+
+Deploy your application.
+
+Start the server using the start command.
+
+Once deployment is complete, your app will be live at a URL like your-app-name.onrender.com.
+
+If you want a custom domain like joviancareers.com, you can configure that separately under your Render service settings.
+
+Updating the App
+One of the great features of Render is automatic deployment. Any time you push changes to the main branch, Render detects them and automatically redeploys the app. For example:
+
+Change the salary in your code from “Backend Engineer” to $150,000.
+
+Edit home.html to rename “Open Positions” to “Job Openings”.
+
+Commit and push the changes.
+
+Render will detect this and begin a new deployment. If for some reason deployment doesn’t trigger automatically, you can manually click "Manual Deploy" > "Deploy latest commit" in the Render dashboard.
+
+This workflow lets you:
+
+Develop and test locally or on Replit.
+
+Push changes to GitHub.
+
+Watch them automatically go live on your Render-hosted site.
+
+It’s that easy to deploy and update your Flask app with Render.com.

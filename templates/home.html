@@ -7,12 +7,20 @@
   <title>DD</title>
 </head>
 <body>
+  {% include "nav.html" %}
   <div class="container">
     <h1 class="text-center mt-2 mb-4">JustDoIt</h1>
     <img class="img-fluid" src="/static/images/kelly-sikkema-Oc3eKVTSnho-unsplash.jpg" >
 
     <h2 class="text-center mt-2 mb-4">About Discpline</h2>
-    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quae unde earum asperiores impedit cupiditate voluptates eos? Aliquid cumque quia in quasi suscipit nesciunt alias ea, et, sapiente reiciendis rerum eligendi nam dolore minima. Maxime modi dolores quos, enim rem dicta doloribus magnam nam blanditiis aliquam hic praesentium, repudiandae ea animi neque nihil officia cum corporis velit inventore alias ullam? Eveniet autem eius assumenda est magni neque ut, odio, quibusdam ea praesentium corrupti! Quasi fuga, sint porro similique tempora assumenda autem obcaecati cumque vel, nostrum corrupti dolor doloribus sit fugiat maiores, quo vitae rerum quas ad odit consequatur accusantium consectetur.</p>
+    <div class="row">
+      <div class="col-6">
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quae unde earum asperiores impedit cupiditate voluptates eos? Aliquid cumque quia in quasi suscipit nesciunt alias ea, et, sapiente reiciendis rerum eligendi nam dolore minima. Maxime modi dolores quos, enim rem dicta doloribus magnam nam blanditiis aliquam hic praesentium, repudiandae ea animi neque nihil officia cum corporis velit inventore alias ullam? Eveniet autem eius assumenda est magni neque ut, odio, quibusdam ea praesentium corrupti! Quasi fuga, sint porro similique tempora assumenda autem obcaecati cumque vel, nostrum corrupti dolor doloribus sit fugiat maiores, quo vitae rerum quas ad odit consequatur accusantium consectetur.</p>
+      </div>
+      <div class="col-6">
+        <img src="/static/images/people.jpg" alt="people" style="height: 300px;">
+      </div>
+    </div>
 
     <h2 class="text-center mt-2 mb-4">Daily Task</h2>
     <div>
@@ -26,7 +34,7 @@
     <button class="btn btn-primary btn-lg">Contact Us</button>
     <p class="mt-4">Copyright 2025, Amit</p>
   </div>  
-  
   </div>
+  {% include "footer.html" %}
 </body>
 </html>
